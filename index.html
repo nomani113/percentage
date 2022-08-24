@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body background-color: aqua>
+
+    <style>
+        
+        
+        .ptt {
+            border-bottom: center royalblue;
+            padding-bottom: 10%;
+            background-color: rgb(119, 117, 116);
+            text-align: center;
+            height: 400px;
+             width: 600px;
+            border: 2px solid blue ;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+          }
+
+      
+       
+
+          
+    </style>
+    <div class="ptt">
+        
+        <h1 style="text-align: center;"><br><br><u> PERCENTAGE CALCULATOR</u></h1>
+        <div class="style">
+
+            <h3>Only Enter Numeric Value!</h3>
+        <input type="number" placeholder="Total NO" id="total"><br>
+        <input type="number" placeholder="Obtained No" id="obt"><br><br>
+        <input type="button" name="" value="Calculate Percentage" onclick="cal()">
+    </div>
+
+
+
+        <p id="pass"> </p>
+        
+        
+    </div>
+    <script>
+        alert("Hello! Welcome to % Calculator")
+        function cal() {
+
+
+            let totalMarks = document.getElementById("total").value;
+            let ObtainMarks = document.getElementById("obt").value;
+            let per = (ObtainMarks / totalMarks) * 100;
+
+
+            if (per <= 100 && per >= 80) {
+                grades = 'A+';
+            } else if (per <= 79 && per >= 70) {
+                grades = 'A';
+            } else if (per <= 69 && per >= 60) {
+                grades = 'B';
+            } else if (per <= 59 && per >= 50) {
+                grades = 'C';
+            } else {
+                grades = 'F';
+            }
+
+            if (per >= 50) {
+                document.getElementById('pass').innerHTML = `Your percentage is ${per}%. <br> Your grade is ${grades}. Congrats! You are Pass. `
+            }
+            else {
+                document.getElementById('pass').innerHTML = `Your percentage is ${per}%. <br> Your grade is ${grades}. HardLuck! You are Fail. `
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
